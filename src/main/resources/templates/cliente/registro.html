@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'login')}">
+<head>
+	<meta charset="UTF-8">
+	<title>Registro</title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	
+
+</head>  
+<body>
+ <form class="formulario" th:object="${client}" th:action="@{/cliente/registro}" method="post">
+    
+    <h1>Regístrese</h1>
+     <div class="contenedor">
+     
+         <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" placeholder="Nombres" th:field="*{firstName}">
+         </div>
+
+         <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" placeholder="Apellidos" th:field="*{lastName}">
+         </div>
+
+         <div class="input-contenedor">
+         <i class="fas fa-user icon"></i>
+         <input type="text" placeholder="DNI" th:field="*{dni}">
+         </div>
+         
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="text" placeholder="Correo Electronico" data-inputmask="'alias': 'email'"
+         autocomplete="off" th:field="*{email}">
+         </div>
+
+         <div class="input-contenedor">
+            <i class="fas fa-phone-alt icon"></i>
+            <input type="text" placeholder="Teléfono" data-inputmask="'mask': '(999) 999-9999'" th:field="*{phone}">
+        </div>
+         
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+             <input type="text" placeholder="Usuario" th:field="*{user.userID}">
+        </div>
+
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" placeholder="Contraseña" th:field="*{user.password}">
+         </div>
+
+         
+         <input type="submit" value="Registrar" class="button">
+         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+         
+     </div>
+    </form>
+    <p th:text="${mensaje}">
+
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+        <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+    
+        <script>
+          $('.input-group.date').datepicker({
+            autoclose: true,
+            todayHighlight: true
+          });
+        </script>
+        <script>
+          $(":input").inputmask();
+        </script>
+        
+</body>
+</html>
+
+<style>
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #007991;
+    background: -webkit-linear-gradient(to right, #78ffd6, #007991);
+    background: linear-gradient(to right, #78ffd6, #007991);
+    background-size: cover;
+    background-attachment: fixed;
+}
+* {
+    box-sizing: border-box;
+}
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+.formulario{
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+h1{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+input[type="text"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
+}
+.input-contenedor{
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: #999;
+}
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background:  #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background: cadetblue;
+}
+p{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+      color: #1a2537;
+    font-weight: 600;
+}
+.link:hover{
+     color: cadetblue;
+}
+@media(min-width:768px)
+{
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}
+</style>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="da_equifax3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="98f64ffc-38af-483e-a1f6-83332ce6c6ef">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="da_equifax1"/>
+	<queryString language="SQL">
+		<![CDATA[select rs.nombres as nombre, rs.apellidos as apellido, rs.dni, o.dias_vencidas as vencidos, o.deuda FROM t_dato_consulta o
+inner JOIN t_respuesta rs on rs.id=o.respuesta_id
+ORDER BY o.deuda desc]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_respuesta"/>
+	</field>
+	<field name="apellido" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.label" value="apellido"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_respuesta"/>
+	</field>
+	<field name="dni" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_respuesta"/>
+	</field>
+	<field name="vencidos" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="vencidos"/>
+		<property name="com.jaspersoft.studio.field.label" value="vencidos"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_dato_consulta"/>
+	</field>
+	<field name="deuda" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="deuda"/>
+		<property name="com.jaspersoft.studio.field.label" value="deuda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_dato_consulta"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="8" width="334" height="62" uuid="1eb73ad0-4180-48e6-a6cf-6c5911d9336a"/>
+				<textElement textAlignment="Center">
+					<font size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporte Crediticio]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="75" height="70" uuid="915973e2-e84e-4f67-9ecd-ca1b91ef8e58"/>
+				<imageExpression><![CDATA["https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0002/7177/brand.gif?itok=iKwm_yv4"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement x="-10" y="35" width="551" height="1" uuid="1611ea81-8de5-4e02-b1d2-e694fb1b32a0"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="78" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="40" width="551" height="1" uuid="086bd5ea-dc15-410f-803f-faa3a75a6e5f"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="11" width="100" height="30" uuid="9e6c54fa-797a-4b49-a331-bada3c239f3b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="868914ed-b660-480a-be27-74b24b8adc09"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="12" width="100" height="30" uuid="752a99e9-ebdc-4ed9-923d-cac48cbde647">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1114b13-c0bc-48e0-99f0-544d72f1c74d"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="11" width="100" height="30" uuid="c63180d0-6eb5-44d5-806b-81274ff41ddc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ad8b030-4655-4197-bae4-03091c5acc22"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="12" width="100" height="30" uuid="ef070109-aa57-461a-8ca1-7df41d1c6244">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="312bfabb-5b78-4b34-9d7c-174791445182"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Días vencidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="12" width="100" height="30" uuid="3b172e45-f4fe-4f3e-9330-4dac0c2348dc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ba700f6-6f1e-4b00-a682-59e1624b0fd2"/>
+				</reportElement>
+				<textElement>
+					<font fontName="DejaVu Sans" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deuda]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="10" width="100" height="30" uuid="b31f75c4-6db9-4418-a7d0-2bc47e5ca955">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="868914ed-b660-480a-be27-74b24b8adc09"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="10" width="100" height="30" uuid="ccaaae6b-36e4-45b5-8a67-2ed7af6264e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f1114b13-c0bc-48e0-99f0-544d72f1c74d"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="10" width="100" height="30" uuid="081b445c-4c4f-4313-8ec3-fdd9e5eafab7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ad8b030-4655-4197-bae4-03091c5acc22"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="10" width="100" height="30" uuid="f5071b75-350a-4254-84b8-6967ba87b01a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="312bfabb-5b78-4b34-9d7c-174791445182"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vencidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="10" width="100" height="30" uuid="eb06c43c-605c-4ac2-ac8e-dec5692f2489">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ba700f6-6f1e-4b00-a682-59e1624b0fd2"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacingSize="1.0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deuda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="25" width="100" height="30" uuid="a7d1ebb0-b9b4-4b8b-a68d-a24ce7888b2c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="25" width="100" height="30" uuid="125b92e6-eb50-4daf-9e25-afc055f4ea14"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="520" y="25" width="100" height="30" uuid="a54935bd-0e84-4874-83ad-1cfbfb82c40f"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
