@@ -14,38 +14,162 @@
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.css}" />
   <link th:rel="stylesheet" th:href="@{/webjars/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
   <link th:rel="stylesheet" th:href="@{/resources/css/w3.css}" />
+  <style>
+    /* Importación de fuentes de google fonts */ 
+  @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+  
+  
+  body{
+    height: 100%; 
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #9E1B32; 
+  }
+  
+  
+  .contact_form{  
+    width: 460px; 
+    height: auto;
+    margin: 80px auto;
+    border-radius: 10px;  
+    padding-top: 30px;
+    padding-bottom: 20px;  
+    background-color: #fbfbfb; 
+    padding-left: 30px; 
+  }
+  
+  
+  input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #9E1B32; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+  }
+  
+  
+  textarea{
+    background-color: #fbfbfb; 
+    width: 405px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #9E1B32; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+  }
+  
+  
+  label{
+    display: block; 
+    float: center;  
+  }
+  
+  
+  button{
+    height: 45px; 
+    padding-left: 5px;
+    padding-right: 5px;   
+    margin-bottom: 20px; 
+    margin-top: 10px;   
+    text-transform: uppercase;
+    background-color: #9E1B32; 
+    border-color: #9E1B32; 
+    border-style: solid; 
+    border-radius: 10px;  
+    width: 420px;   
+    cursor: pointer;
+  }
+  
+  
+  button p{
+    color: #fff; 
+  }
+  
+  
+  span{
+    color: #9E1B32; 
+  }
+  
+  
+  .aviso{
+    font-size: 13px;  
+    color: #0e0e0e;  
+  }
+  
+  
+  h1{
+    font-size: 39px;  
+    text-align: letf; 
+    padding-bottom: 20px; 
+    color: #9E1B32;
+  }
+  
+  
+  h3{
+    font-size: 16px; 
+    padding-bottom: 30px;
+    color: #0e0e0e;   
+  }
+  
+  
+  p{
+    font-size: 14px; 
+    color: #0e0e0e; 
+  }
+  
+  
+  ::-webkit-input-placeholder {
+   color: #a8a8a8;
+  }
+  
+  
+  ::-webkit-textarea-placeholder {
+   color: #a8a8a8;
+  }
+  
+  
+  .formulario input:focus{
+    outline:0;
+    border: 1px solid #97d848;
+  }
+  
+  
+  .formulario textarea:focus{
+    outline:0;
+    border: 1px solid #97d848;
+  }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">App</a>
+        <a class="navbar-brand" href="#"><img src="https://www.civilandhumanrights.org/wp-content/uploads/2016/10/Equifax-Logo-2008.jpg" width="150px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contacto/create">Contact</a>
+              <a class="nav-link" href="/contacto/create">Contacto</a>
             </li>          
-            <li class="nav-item">
-              <a class="nav-link" href="/catalogo/index">Catalogo</a>
-            </li>
-            <li class="nav-item">
-              <form class="form-inline" th:action="@{/catalogo/index}" method="get">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="searchName">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>              
-            </li>            
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <th:block th:if="${session.user==null}">
-              <li class="nav-item"><a href="/cliente/create"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-              <li class="nav-item"><a href="/usuario/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="/cliente/crear"><span class="glyphicon glyphicon-user"></span>Registrate</a></li>
+              <li class="nav-item"><a class="nav-link" href="/usuario/login"><span class="glyphicon glyphicon-log-in"></span>Iniciar Sesión</a></li>
             </th:block>   
             <th:block th:if="${session.user!=null}">
-              <li class="nav-item"><a href="/usuario/logout"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+              <li class="nav-item"><a class="nav-link" href="/usuario/logout"><span class="glyphicon glyphicon-log-in"></span>Salir</a></li>
             </th:block>                     
           </ul>            
         </div>
@@ -59,7 +183,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12 text-center">
-              Copyright @ 2021 SoftTech
+              Copyright @ 2022 Grupo Naranja
           </div>
         </div>
       </div>

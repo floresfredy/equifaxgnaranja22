@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'login')}">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrate</title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	
+
+</head>  
+<body>
+  <div class="contact_form">
+
+    <div class="formulario">  
+
+ <form class="formulario" th:object="${client}" th:action="@{/cliente/crear}" method="post">
+    
+    <h1>Formulario de registro</h1>
+     
+         <input type="text" placeholder="Nombres" th:field="*{firstName}">
+         
+         <input type="text" placeholder="Apellidos" th:field="*{lastName}">
+        
+         <input type="text" placeholder="DNI" th:field="*{dni}">
+         
+         <input type="text" placeholder="Correo Electronico" data-inputmask="'alias': 'email'"
+         autocomplete="off" th:field="*{email}">
+         
+        <input type="text" placeholder="Teléfono" data-inputmask="'mask': '(999) 999-9999'" th:field="*{phone}">
+        
+             <input type="text" placeholder="Usuario" th:field="*{user.userID}">
+        
+         <input type="password" placeholder="Contraseña" th:field="*{user.password}">
+         
+
+         
+         <input type="submit" value="Registrar" class="button">
+         
+    
+    </form>
+    <p th:text="${mensaje}"></p>
+  </div>
+</div>
+    
+
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+        <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+    
+        <script>
+          $('.input-group.date').datepicker({
+            autoclose: true,
+            todayHighlight: true
+          });
+        </script>
+        <script>
+          $(":input").inputmask();
+        </script>
+        
+</body>
+</html>

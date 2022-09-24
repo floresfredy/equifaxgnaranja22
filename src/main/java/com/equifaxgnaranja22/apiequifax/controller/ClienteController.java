@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Controller
 public class ClienteController {
     
-    private static final String INDEX ="cliente/registro"; 
+    private static final String INDEX ="cliente/crear"; 
     private static String MODEL_CONTACT="client";
     private final ClienteRepository clientsData;
     private final UsuarioRepository usuariosData;
@@ -27,17 +27,17 @@ public class ClienteController {
         this.usuariosData = usuariosData;
     }      
 
-    @GetMapping("/cliente/registro")
+    @GetMapping("/cliente/crear")
     public String index(Model model) {
         model.addAttribute(MODEL_CONTACT, new Cliente());
         return INDEX;
     }    
 
-    @PostMapping("/cliente/registro")
+    @PostMapping("/cliente/crear")
     public String createSubmitForm(Model model, 
         @Valid Cliente objCliente, BindingResult result ){
         if(result.hasFieldErrors()) {
-            model.addAttribute("mensaje", "No se registro un cliente");
+            model.addAttribute("mensaje", "No se registro el cliente");
         }else{
             Usuario user = objCliente.getUser();
             user.setTipoUsuario("C");
@@ -45,7 +45,7 @@ public class ClienteController {
             this.usuariosData.flush();
             this.clientsData.save(objCliente);
             model.addAttribute(MODEL_CONTACT, objCliente);
-            model.addAttribute("mensaje", "Se registro un cliente");
+            model.addAttribute("mensaje", "Se registro el cliente");
         }
         return INDEX;
     }

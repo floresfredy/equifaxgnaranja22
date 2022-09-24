@@ -9,67 +9,32 @@
 
 <body>
  
-    <div class="container">
+  <div class="contact_form">
 
-        <div class="row">
-          <div class="col-sm-10 mt-5">
-            <div class="form-group row">
+    <div class="formulario"> 
               <h1>Contactanos</h1>
-            </div>
+            
             <form th:object="${contact}" th:action="@{/contacto/create}" method="post">
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="nombre">Nombre</label>
-                </div>
-                <div class="col-sm-2">
-                  <input type="text" th:field="*{nombre}" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="apellido">Apellido</label>
-                </div>
-                <div class="col-sm-2">
-                  <input type="text" th:field="*{apellido}" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="email">Email</label>
-                </div>
-                <div class="col-sm-2">
+              
+                  <input type="text" th:field="*{nombre}" placeholder="Nombres"/>
+                
+                  <input type="text" th:field="*{apellido}" placeholder="Apellidos" />
+                
                   <input type="text" data-inputmask="'alias': 'email'"
-                  autocomplete="off" th:field="*{email}" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="phone">Phone</label>
-                </div>
-                <div class="col-sm-2">
-                  <input type="text" data-inputmask="'mask': '(999) 999-9999'" th:field="*{phone}" />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-2">
-                  <label for="reason">Reason</label>
-                </div>
-                <div class="col-sm-2">
-                  <textarea cols="22" rows="4" th:field="*{reason}" />
-                </div>
-              </div>              
-              <div class="form-group row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2">
-                  <button th:with="text='Add Contact'" class="btn btn-primary" type="submit" th:text="${text}">Agregar
-                    Contacto</button>
-                </div>
-              </div>
+                  autocomplete="off" th:field="*{email}" placeholder="Email" />
+                
+                  <input type="text" data-inputmask="'mask': '(999) 999-9999'" th:field="*{phone}" placeholder="Telefono" />
+               
+                  <textarea cols="22" rows="4" th:field="*{reason}" placeholder="Comentario" />
+               
+                  
+                    <input type="submit" value="Agregar Contacto" class="button">
+                
             </form>
-            <p th:text="${mensaje}" />
+            <p th:text="${mensaje}"></p>
           </div>
         </div>
-      </div>
+      
     
       <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
       <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>

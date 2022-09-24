@@ -22,7 +22,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("API EQUIFAX 22")
+                .title("API EQUIFAX NARANJA")
                 .description("This application designed for integration propousal")
                 .build();
     }
