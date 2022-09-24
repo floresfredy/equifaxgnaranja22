@@ -1,7 +1,5 @@
 package com.equifaxgnaranja22.apiequifax.model;
 
-import java.util.Date;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
