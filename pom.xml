@@ -8,10 +8,10 @@
 		<version>2.5.14</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.acme</groupId>
-	<artifactId>storeapp</artifactId>
+	<groupId>com.equifaxgnaranja22</groupId>
+	<artifactId>equifaxgnaranja22</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>storeapp</name>
+	<name>equifaxgnaranja22</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>18</java.version>
@@ -40,7 +40,7 @@
 		<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <version>1.16.22</version>
         </dependency>
 
 		<!-- data-->
