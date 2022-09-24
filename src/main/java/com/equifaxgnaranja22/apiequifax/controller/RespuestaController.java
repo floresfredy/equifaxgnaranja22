@@ -55,16 +55,5 @@ public class RespuestaController {
 
     }
 
-    @GetMapping(value = "/deudaTotal", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Map<String, Object>>> deuda(){
-        return  new ResponseEntity<List<Map<String, Object>>>(
-            consultaData.querySumaTotal(), HttpStatus.OK);
-    }
-
-    @GetMapping(value = "/diasVenciadas", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Map<String, Object>>> diasVencidas(){
-        return  new ResponseEntity<List<Map<String, Object>>>(
-            consultaData.querySumaTotalDias(), HttpStatus.OK);
-    }
 
 }
