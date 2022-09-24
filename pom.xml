@@ -5,21 +5,20 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.5</version>
+		<version>2.5.14</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.equifaxgnaranja22</groupId>
-	<artifactId>Apiequifax</artifactId>
+	<groupId>com.acme</groupId>
+	<artifactId>storeapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Apiequifax</name>
+	<name>storeapp</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
-		<!-- Web dependencies -->
+		<java.version>18</java.version>
 		<webjars-bootstrap.version>4.6.0</webjars-bootstrap.version>
-		<webjars-jquery-ui.version>1.13.0</webjars-jquery-ui.version>
+		<webjars-jquery-ui.version>1.13.1</webjars-jquery-ui.version>
 		<webjars-jquery.version>3.6.0</webjars-jquery.version>
-		<font-awesome.version>5.15.2</font-awesome.version>
+		<font-awesome.version>5.15.2</font-awesome.version>		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -28,32 +27,23 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
-		<!-- utilitario -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.20</version>
-		</dependency>
-		
-		<!-- swagger para los contratos -->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-boot-starter</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		
-		<!-- data -->
+		<!-- data-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -62,13 +52,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.2.19</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<version>42.5.0</version>
 		</dependency>
 
 		<!-- webjars -->
@@ -113,24 +97,21 @@
 		</dependency>
 		<!-- end of webjars -->
 
-		<!-- jasper -->
+		<!-- swagger -->
+		
 		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>6.17.0</version>
-		</dependency>
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports-fonts</artifactId>
-			<version>6.17.0</version>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
+
+		<!-- test-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 
 	<build>
