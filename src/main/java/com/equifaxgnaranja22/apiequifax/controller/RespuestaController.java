@@ -33,7 +33,7 @@ public class RespuestaController {
         return new ResponseEntity<Integer>(p.getId(),HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/dni", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Respuesta> findByNumberof(@PathVariable String dni){
         Optional<Respuesta> optRespuesta = respuestaData.findByNumero(dni);
         if(optRespuesta.isPresent()){
