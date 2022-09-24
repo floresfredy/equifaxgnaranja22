@@ -7,11 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import com.equifaxgnaranja22.apiequifax.repository.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value ="api/equifax", produces ="application/json")
+@RequestMapping(value ="api", produces ="application/json")
 
 public class RespuestaController {
     private final RespuestaRepository respuestaData;
@@ -34,7 +33,7 @@ public class RespuestaController {
         return new ResponseEntity<Integer>(p.getId(),HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/dni", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Respuesta> findByNumberof(@PathVariable String dni){
         Optional<Respuesta> optRespuesta = respuestaData.findByNumero(dni);
         if(optRespuesta.isPresent()){
@@ -48,7 +47,7 @@ public class RespuestaController {
   
     }
     
-    @GetMapping(value = "/datosConsulta", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/consulta", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<DatosConsulta>> datosConsulta() {
         return  new ResponseEntity<List<DatosConsulta>>(
             consultaData.findAll(), HttpStatus.OK);
