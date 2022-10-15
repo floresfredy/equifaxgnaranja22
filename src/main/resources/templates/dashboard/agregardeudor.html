@@ -20,9 +20,9 @@
             <br>
     <form class="formulario" th:object="${deudor}" th:action="@{/dashboard/agregardeudor}" method="post">
     
-        <input type="text" value="45612378" th:field="*{dni}">
-        <input type="text" value="Freddy" th:field="*{nombres}">
-        <input type="text" value="Flores" th:field="*{apellidos}">
+        <input type="text" placeholder="Ingrese su DNI" th:field="*{dni}">
+        <input type="text" placeholder="Nombres" th:field="*{nombres}">
+        <input type="text" placeholder="Apellidos" th:field="*{apellidos}">
 
         <input type="text" placeholder="Nacionalidad" th:field="*{nacionalidad}">
         <input type="text" placeholder="Ocupacion" th:field="*{ocupacion}">
