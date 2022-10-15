@@ -25,4 +25,18 @@ public class AgregarDeudor {
     private String dni;
     private String nacionalidad;
     private String ocupacion;
+
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 }

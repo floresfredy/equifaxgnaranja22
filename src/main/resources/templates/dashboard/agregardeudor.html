@@ -17,10 +17,11 @@
             <h1>Agregar deudor</h1>
             <input type="text" placeholder="Ingrese DNI">
             <input type="submit" value="Buscar" class="button" >
+       
             <br>
     <form class="formulario" th:object="${deudor}" th:action="@{/dashboard/agregardeudor}" method="post">
     
-        <input type="text" placeholder="Ingrese su DNI" th:field="*{dni}">
+        <input type="text" placeholder="Ingrese su DNI registrado en reniec" th:field="*{dni}">
         <input type="text" placeholder="Nombres" th:field="*{nombres}">
         <input type="text" placeholder="Apellidos" th:field="*{apellidos}">
 
@@ -28,6 +29,7 @@
         <input type="text" placeholder="Ocupacion" th:field="*{ocupacion}">
         <input type="submit" value="Agregar" class="button" >
     </form>
+    <p th:text="${mensaje}"></p>
     </div>
 </div>
 

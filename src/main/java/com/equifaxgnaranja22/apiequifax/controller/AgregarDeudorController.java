@@ -4,17 +4,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 
 import com.equifaxgnaranja22.apiequifax.model.AgregarDeudor;
 
 import com.equifaxgnaranja22.apiequifax.repository.AgregarDeudorRepository;
 import com.equifaxgnaranja22.apiequifax.repository.UsuarioRepository;
-
+import com.equifaxgnaranja22.apiequifax.integracion.ExisteUsuario;
 import javax.validation.Valid;
 
 @Controller
 public class AgregarDeudorController {
     
+    @Autowired
+    private ExisteUsuario validando;
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder){
+        binder.addValidators(validando);
+    }
+
     private static final String INDEX ="dashboard/agregardeudor"; 
     private static String MODEL_CONTACT="deudor";
     private final AgregarDeudorRepository deudorData;

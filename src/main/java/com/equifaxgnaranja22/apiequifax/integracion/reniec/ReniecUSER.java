@@ -1,8 +1,6 @@
 package com.equifaxgnaranja22.apiequifax.integracion.reniec;
 
-
 public class ReniecUSER {
-    
     
     private String dni;
 
