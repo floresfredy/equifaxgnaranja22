@@ -161,7 +161,14 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/contacto/create">Contacto</a>
-            </li>          
+            </li>
+            <th:block th:if="${session.user!=null}">
+              
+              <li class="nav-item active">
+                <a class="nav-link" href="/dashboard"><span class="tx-menu">Dashboard</span> </a>
+              </li>
+                                                     
+            </th:block>          
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <th:block th:if="${session.user==null}">

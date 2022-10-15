@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'dashboard')}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Index</title>
+    <link rel="stylesheet" href="~/css/templatemo-style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+</head>
+<body>
+    <div class="contact_form">
+
+        <div class="formulario">  
+            <h1>Agregar deudor</h1>
+            <input type="text" placeholder="Ingrese DNI">
+            <input type="submit" value="Buscar" class="button" >
+            <br>
+    <form class="formulario" th:object="${deudor}" th:action="@{/dashboard/agregardeudor}" method="post">
+    
+        <input type="text" value="45612378" th:field="*{dni}">
+        <input type="text" value="Freddy" th:field="*{nombres}">
+        <input type="text" value="Flores" th:field="*{apellidos}">
+
+        <input type="text" placeholder="Nacionalidad" th:field="*{nacionalidad}">
+        <input type="text" placeholder="Ocupacion" th:field="*{ocupacion}">
+        <input type="submit" value="Agregar" class="button" >
+    </form>
+    </div>
+</div>
+
+
+    
+    
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+    <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script> 
+    </body>
+</html>

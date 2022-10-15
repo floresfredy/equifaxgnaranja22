@@ -20,8 +20,8 @@
 		<webjars-jquery.version>3.6.0</webjars-jquery.version>
 		<font-awesome.version>5.15.2</font-awesome.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>		
+    <maven.compiler.source>18</maven.compiler.source>
+    <maven.compiler.target>18</maven.compiler.target>		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -99,7 +99,19 @@
 			<version>3.0.2</version>
 		</dependency>
 		<!-- end of webjars -->
+		
+		<!-- jasper -->
 
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>6.17.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports-fonts</artifactId>
+			<version>6.17.0</version>
+		</dependency>
 		<!-- swagger -->
 		
 		<dependency>
@@ -108,6 +120,12 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<!-- sengrid -->
+		<dependency>
+    		<groupId>com.sendgrid</groupId>
+    		<artifactId>sendgrid-java</artifactId>
+   			 <version>4.9.3</version>
+		</dependency>
 
 		<!-- test-->
 		<dependency>
