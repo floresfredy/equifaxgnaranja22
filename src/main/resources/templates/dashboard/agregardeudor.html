@@ -15,8 +15,6 @@
 
         <div class="formulario">  
             <h1>Agregar deudor</h1>
-            <input type="text" placeholder="Ingrese DNI">
-            <input type="submit" value="Buscar" class="button" >
        
             <br>
     <form class="formulario" th:object="${deudor}" th:action="@{/dashboard/agregardeudor}" method="post">
