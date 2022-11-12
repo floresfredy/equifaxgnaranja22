@@ -46,15 +46,15 @@ public class AgregarDeudorController {
     public String createSubmitForm(Model model, 
         @Valid AgregarDeudor objDeudor, BindingResult result ){
         if(result.hasFieldErrors()) {
-            model.addAttribute("mensaje", "No se registro el deudor");
+            model.addAttribute(MODEL_CONTACT, objDeudor);
+            model.addAttribute("mensaje", "Persona no existe en reniec");
+            
         }else{
-            
-            
             this.deudorData.save(objDeudor);
             model.addAttribute(MODEL_CONTACT, objDeudor);
             model.addAttribute("mensaje", "Se registro el deudor");
         }
-        return INDEX;
+        return "dashboard/agregardeudor";
     }
 
 }

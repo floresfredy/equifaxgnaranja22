@@ -32,15 +32,10 @@ public class ExisteUsuario implements Validator {
             if(reniecAPI.findExitsUserByDni(usuario.getDni()) == null){
 
                 errors.rejectValue("dni", "invalidate.identificador");
-                System.out.println("malooooooooooo");
 
-            }else{
-                System.out.println("exitoooooooooo");
             }
         }
-
-        
-        
+          
     }
     
 }
