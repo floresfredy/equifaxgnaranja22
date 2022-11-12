@@ -21,9 +21,11 @@ public class DatosConsulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String entidad;
     private BigDecimal deuda;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date fecha; 
+    private Date fecha;
+    private Integer calificacion;
     private Integer diasVencidas;
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)

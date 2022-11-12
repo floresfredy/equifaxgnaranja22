@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" 
-    th:replace="~{fragments/layout :: layout (~{::body},'agregardeudor')}">
+    th:replace="~{fragments/layout :: layout (~{::body},'dashboard')}">
 
 <head>
     <meta charset="utf-8" />
@@ -14,20 +14,21 @@
     <div class="contact_form">
 
         <div class="formulario">  
-            <h1>Agregar deudor</h1>
+            <h1>Agregar Deuda</h1>
        
             <br>
-    <form class="formulario" th:object="${deudor}" th:action="@{/dashboard/agregardeudor}" method="post">
+    <form class="formulario" th:object="${deuda}" th:action="@{/dashboard/datosconsulta}" method="post">
     
-        <input type="text" placeholder="Ingrese su DNI registrado en reniec" th:field="*{dni}">
-        <input type="text" placeholder="Nombres" th:field="*{nombres}">
-        <input type="text" placeholder="Apellidos" th:field="*{apellidos}">
+        <input type="text" placeholder="Ingrese usuario deudor" th:field="*{respuesta}">
+        <input type="text" placeholder="Entidad" th:field="*{entidad}">
+        <input type="text" placeholder="Deuda" th:field="*{deuda}">
 
-        <input type="text" placeholder="Nacionalidad" th:field="*{nacionalidad}">
-        <input type="text" placeholder="Ocupacion" th:field="*{ocupacion}">
+        <input type="text" placeholder="Dias Vencidos" th:field="*{diasVencidas}">
+        <input type="text" placeholder="Calificación" th:field="*{calificacion}">
+        <input type="text" placeholder="Fecha" th:field="*{fecha}">
         <input type="submit" value="Agregar" class="button" >
     </form>
-    <p th:text="${mensaje}"></p>
+    <p th:text="${mensajed}"></p>
     </div>
 </div>
 
@@ -38,5 +39,6 @@
     <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
     <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
     <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script> 
+    
     </body>
 </html>
