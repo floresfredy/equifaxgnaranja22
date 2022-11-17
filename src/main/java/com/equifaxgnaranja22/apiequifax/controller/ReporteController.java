@@ -23,11 +23,11 @@ public class ReporteController {
         this.resourceLoader = resourceLoader;
     }
     
-    @GetMapping("/jasper/repventas")
+    @GetMapping("/reporte")
     public void generateReporteVentas(HttpServletResponse response)  {
         response.setContentType("application/x-download");
         response.setHeader("Content-Disposition", 
-            String.format("attachment; filename=\"datosCliente.pdf\""));
+            String.format("attachment; filename=\"reporte.pdf\""));
         try {
             OutputStream out = response.getOutputStream();
             Resource resource = resourceLoader.getResource("classpath:./reports/RepEquifax.jrxml");
